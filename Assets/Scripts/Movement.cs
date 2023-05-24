@@ -57,6 +57,8 @@ public class Movement : MonoBehaviour
 
     void ApplyRotation(float rotationSpeed)
     {
-        rb.AddRelativeTorque(Vector3.forward * rotationSpeed * Time.deltaTime);
+        rb.freezeRotation = true;
+        transform.Rotate(Vector3.forward * rotationSpeed * Time.deltaTime);
+        rb.freezeRotation = false;
     }
 }
