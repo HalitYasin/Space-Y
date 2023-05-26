@@ -7,15 +7,16 @@ public class Movement : MonoBehaviour
     [SerializeField] float baseSpeed = 100.0f;
     [SerializeField] float boost = 0.2f;
     [SerializeField] float rotateSpeed = 5.0f;
+    [SerializeField] AudioClip mainEngine;
 
     Rigidbody rb;
-    AudioSource thrustSound;
+    AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        thrustSound = GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -38,14 +39,14 @@ public class Movement : MonoBehaviour
                 ApplyThrust(baseSpeed);
             }
             
-            if (!thrustSound.isPlaying)
+            if (!audioSource.isPlaying)
             {
-               thrustSound.Play();
+               audioSource.PlayOneShot(mainEngine);
             }
         }
-        else if (thrustSound.isPlaying)
+        else if (audioSource.isPlaying)
         {
-            thrustSound.Pause();
+            audioSource.Pause();
         }
     }
 
