@@ -37,12 +37,13 @@ public class Movement : MonoBehaviour
             {
                 ApplyThrust(baseSpeed);
             }
+            
             if (!thrustSound.isPlaying)
             {
                thrustSound.Play();
             }
         }
-        else
+        else if (thrustSound.isPlaying)
         {
             thrustSound.Pause();
         }
