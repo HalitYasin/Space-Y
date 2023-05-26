@@ -115,7 +115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseSpeed: 120
   boost: 0.2
-  rotateSpeed: 25
+  rotateSpeed: 30
 --- !u!82 &7910355319574926035
 AudioSource:
   m_ObjectHideFlags: 0
@@ -240,3 +240,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b4097b4bc86e2c4a901da818c2d6b24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reloadLevelDelay: 1
+  nextLevelDelay: 3
